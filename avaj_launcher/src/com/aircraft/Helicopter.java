@@ -5,7 +5,7 @@ import com.simulator.Flyable;
 import com.simulator.Coordinates;
 import com.weather.WeatherTower;
 
-public class Helicopter extends Aircraft implements Flyable {
+public class Helicopter extends Aircraft {
 
     public Helicopter(long id, String name, Coordinates coordinates) {
         super(id, name, coordinates);

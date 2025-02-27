@@ -5,7 +5,7 @@ import com.simulator.Flyable;
 import com.simulator.Coordinates;
 import com.weather.WeatherTower;
 
-public class Baloon extends Aircraft implements Flyable {
+public class Baloon extends Aircraft  {
 
     public Baloon(long id, String name, Coordinates coordinates) {
         super(id, name, coordinates);

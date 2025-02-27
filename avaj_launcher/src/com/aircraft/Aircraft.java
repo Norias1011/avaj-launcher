@@ -1,8 +1,9 @@
 package com.aircraft;
 
 import com.simulator.Coordinates;
+import com.simulator.Flyable;
 
-public abstract class Aircraft {
+public abstract class Aircraft implements Flyable {
     protected long id;
     protected String name;
     protected Coordinates coordinates;
@@ -12,4 +13,6 @@ public abstract class Aircraft {
         this.name = name;
         this.coordinates = coordinates;
     }
+
+    public abstract void updateConditions();
 }
