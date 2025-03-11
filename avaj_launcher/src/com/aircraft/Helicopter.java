@@ -20,4 +20,6 @@ public class Helicopter extends Aircraft {
     public void registerTower(WeatherTower tower) {
         tower.register(this);
     }
+
+
 }

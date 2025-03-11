@@ -1,9 +1,20 @@
 package com.app;
 
 
+import com.error.ErrorParsing;
+import com.utils.Parser;
+import com.simulator.Simulation;
+import java.io.File;
+
 public class Main {
     public static void main(String[] args) {
-
-        System.out.printf("Hello and welcome!");
+        try {
+            Parser.checkArgs(args);
+            Parser.parsingFile(new File(args[0]));
+            Simulation.boarding();
+            // implement the code here
+        } catch (ErrorParsing e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
