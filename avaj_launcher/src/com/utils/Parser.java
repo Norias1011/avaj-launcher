@@ -21,10 +21,9 @@ public class Parser {
         }
     }
 
-    public static void parsingFile(File file) throws ErrorParsing {
+    public static void parsingFile(File file, Simulation simulation) throws ErrorParsing {
         try {
             reader = new BufferedReader(new FileReader(file));
-            simulation = new Simulation();
             simulation.setSimulationNumber(Integer.parseInt(reader.readLine()));
             // not sure of the line below, need to check other way of reading the file
             while (reader.ready()) {

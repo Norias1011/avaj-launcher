@@ -5,3 +5,4 @@ public class ErrorParsing extends Exception {
     public ErrorParsing(String message) { super(message); }
     public ErrorParsing(Throwable cause) { super(cause); }
 }
+

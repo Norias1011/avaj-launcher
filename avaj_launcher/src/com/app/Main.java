@@ -10,8 +10,9 @@ public class Main {
     public static void main(String[] args) {
         try {
             Parser.checkArgs(args);
-            Parser.parsingFile(new File(args[0]));
-            Simulation.boarding();
+            Simulation sim = new Simulation();
+            Parser.parsingFile(new File(args[0]), sim);
+            sim.boarding();
             // implement the code here
         } catch (ErrorParsing e) {
             System.out.println(e.getMessage());
