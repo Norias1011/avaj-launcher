@@ -30,7 +30,6 @@ public class Simulation {
     }
 
     public void setSimulationNumber(int simulationNumber) {
-        System.out.println("Simulation number: " + simulationNumber);
         this.simulationNumber = simulationNumber;
     }
 
