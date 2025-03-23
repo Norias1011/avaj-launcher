@@ -1,76 +1,62 @@
-# avaj-launcher
+# Avaj Launcher
 
-Introduction
+## Overview
+Avaj Launcher is a Java-based aircraft simulation program designed as an introduction to Java programming at 42. It implements Object-Oriented principles and design patterns such as Observer, Singleton, and Factory.
 
-Avaj Launcher is a Java-based aircraft simulation program designed as an introduction to Java programming at 42. It utilizes Object-Oriented principles and design patterns such as Observer, Singleton, and Factory.
+## Features
+- Simulates aircraft behavior based on changing weather conditions.
+- Reads a scenario file and logs results to `simulation.txt`.
+- Implements key Object-Oriented design patterns.
 
-Objectives
+## Prerequisites
+- Java (latest LTS version)
+- Command-line environment with `javac` and `java` installed
 
-The program simulates aircraft behavior based on different weather conditions. The simulation reads a scenario file, processes aircraft movements, and logs the results in simulation.txt.
+## Installation
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/avaj-launcher.git
+   cd avaj-launcher
+   ```
+2. Ensure all Java files are correctly structured within packages following Java conventions.
 
-Requirements
-
-Java (latest LTS version)
-
-No external libraries, build tools, or code generators are allowed
-
-Ensure javac and java are available in your terminal
-
-Installation
-
-Clone the repository:
-
-git clone https://github.com/your-username/avaj-launcher.git
-cd avaj-launcher
-
-Ensure all Java files are correctly placed within packages following Java conventions.
-
-Compilation
-
-To compile the project, run:
-
+## Usage
+### Compile the Project
+```sh
 make compile
+```
+This command compiles all `.java` files into `.class` files.
 
-This will compile all .java files into .class files.
+### Run the Simulation
+```sh
+make run SCENARIO_FILE
+```
+Replace `SCENARIO_FILE` with the name of your scenario file. The output will be saved in `simulation.txt`.
 
-Running the Simulation
-
-To execute the program, run:
-
-make run scenario.txt
-
-Replace scenario.txt with your own scenario file. The simulation output will be saved in simulation.txt.
-
-Cleaning Up
-
-To remove unnecessary compiled files, run:
-
+### Clean Up
+```sh
 make clean
+```
+Removes all unnecessary compiled files.
 
-Scenario File Format
+## Scenario File Format
+The scenario file consists of:
+1. The first line: A positive integer indicating the number of simulation cycles.
+2. Subsequent lines: Aircraft definitions in the format:
+   ```
+   TYPE NAME LONGITUDE LATITUDE HEIGHT
+   ```
+   - `TYPE`: JetPlane, Helicopter, or Baloon
+   - `NAME`: Unique aircraft identifier
+   - `LONGITUDE`, `LATITUDE`: Initial position
+   - `HEIGHT`: Altitude (0-100)
 
-The first line of the scenario file contains a positive integer representing the number of simulation cycles. Each following line describes an aircraft using the format:
+## Simulation Rules
+- Weather conditions: `SUN`, `RAIN`, `FOG`, `SNOW`
+- Each aircraft reacts differently to weather changes.
+- If an aircraft reaches height `0`, it lands and unregisters from the weather tower.
+- Simulation logs all events in `simulation.txt`.
 
-TYPE NAME LONGITUDE LATITUDE HEIGHT
+## Bonus Features
+- Custom exceptions for handling invalid input.
 
-TYPE: JetPlane, Helicopter, or Baloon
-
-NAME: Unique aircraft name
-
-LONGITUDE, LATITUDE: Initial coordinates
-
-HEIGHT: Altitude (0-100)
-
-Simulation Rules
-
-Weather types: SUN, RAIN, FOG, SNOW
-
-Each aircraft reacts differently based on weather conditions
-
-If an aircraft reaches height 0, it lands and unregisters from the weather tower
-
-Messages are logged in simulation.txt
-
-Bonus Features
-
-Custom exceptions for invalid input handling
